@@ -128,4 +128,5 @@ If you'd like to contribute to this project, feel free to submit a pull request 
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as you see fit!
+ GPL-3.0 license
+

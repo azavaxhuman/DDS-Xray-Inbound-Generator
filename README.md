@@ -84,19 +84,6 @@ THEN
 
 ## Sponsor
 
-This project includes a sponsor section promoting a Telegram bot (`@PingiHostBot`) for automated panel installation and tunneling. Features include:
-
-- Installation of 3 panel types.
-- 3 types of tunneling.
-- Automatic domain and SSL setup.
-- Unlimited panel connections.
-- No prior knowledge required.
-
-Check it out:
-
-- Telegram Bot: [@PingiHostBot](https://t.me/PingiHostBot)
-- Channel: [@PingiHost](https://t.me/PingiHost)
-- Website: [pingi.host](https://pingi.host)
 
 ## Support Us with a Donation
 
@@ -129,4 +116,5 @@ If you'd like to contribute to this project, feel free to submit a pull request 
 ## License
 
  GPL-3.0 license
+
 

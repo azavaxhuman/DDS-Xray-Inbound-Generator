@@ -149,29 +149,7 @@ createApp({
       settings: { allowInsecure: false, fingerprint: "chrome" },
     });
 
-    const keyPairs = ref([]);
-    fetch("./keys.json")
-      .then((response) => response.json())
-      .then((data) => {
-        keyPairs.value = data.keys;
-      })
-      .catch((error) => {
-        console.error("Error loading keys.json:", error);
-        keyPairs.value = [
-          {
-            privateKey: "-Lt-RAto4AqRQU71x4ZtwpbJsSv2NTKRaOyJd-mGw0A",
-            publicKey: "asi35kzvsZypOSGoeuCsHCoDWD0q8NSK1IVGF0bo82Y",
-          },
-          {
-            privateKey: "-FOFFSPZCW8eqR_g6sd-hZf9fLWrjd0MlVbirgGHQCc",
-            publicKey: "pp_BqOyK3Hullsa4lIx9goiJl78JdC7j_SducHR9tAI",
-          },
-          {
-            privateKey: "6PkSaCr69MYWO4JhEoDbjtEPer0bEyW2A8tj_abYhwQ",
-            publicKey: "fPHG-kdaR1-ghTPsy0Pa-zjiN9-D84p_gy8QUzfe4nI",
-          },
-        ];
-      });
+  
 
     const realitySettings = ref({
       show: false,

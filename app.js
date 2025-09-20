@@ -1,4 +1,3 @@
-
 const { createApp, ref, computed, watch } = Vue;
 
 createApp({
@@ -331,6 +330,23 @@ createApp({
         .map((b) => b.toString(16).padStart(2, "0"))
         .join("");
       realitySettings.value.shortIds = shortId;
+    };
+
+    // --- X25519 (REALITY) key pair generation using TweetNaCl ---
+    const toBase64Url = (u8) => {
+      let binary = "";
+      for (let i = 0; i < u8.length; i++) binary += String.fromCharCode(u8[i]);
+      return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+    };
+
+    const generateRealityKeyPair = () => {
+      if (!window.nacl || !nacl.box) {
+        alert('TweetNaCl not loaded. Add <script src="https://cdn.jsdelivr.net/npm/tweetnacl@1.0.3/nacl.min.js"></script> to index.html.');
+        return;
+      }
+      const kp = nacl.box.keyPair(); // 32 بایت secret و 32 بایت public (X25519)
+      realitySettings.value.privateKey = toBase64Url(kp.secretKey);
+      realitySettings.value.publicKey  = toBase64Url(kp.publicKey);
     };
 
     const generatedConfig = computed(() => {
@@ -1155,6 +1171,7 @@ createApp({
       copyWalletAddress,
       importFromClipboard,
       importFromFile,
+      generateRealityKeyPair,
     };
   },
 }).mount("#app");
